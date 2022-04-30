@@ -71,4 +71,12 @@ function game() {
      console.log(matchResult);
 }
 
-game();
+
+const buttons = document.querySelectorAll('button');
+
+buttons.forEach(button => {
+    button.addEventListener('click', (e) =>{
+        const resultsDiv = document.querySelector('.results');
+        resultsDiv.textContent = playRound(e.target.value,computerPlay());
+    });
+});
